@@ -1,0 +1,129 @@
+# 🏠 Housing Price Prediction – Kaggle Assignment
+
+## 📌 Problem Statement
+The objective of this project is to build a machine learning model that accurately predicts **housing prices** based on multiple features such as area type, location, size, number of bedrooms, availability, and other property-related attributes.
+
+This assignment is implemented and evaluated using the **Kaggle platform**, following a complete end-to-end machine learning workflow.
+
+---
+
+## 📂 Dataset Description
+The dataset is provided as part of the Kaggle assignment and consists of:
+
+- `train.csv` – Contains input features along with the target variable (`price`)
+- `test.csv` – Contains input features without the target variable (used for final prediction)
+
+The data includes both **numerical** and **categorical** variables such as:
+- Area type
+- Availability
+- Location
+- Size (BHK)
+- Total square feet
+- Bath
+- Balcony
+- Price (target)
+
+---
+
+## 🔧 Libraries Used
+The following Python libraries are used in the notebook:
+
+- **Pandas & NumPy** – Data manipulation and numerical operations  
+- **Matplotlib & Seaborn** – Data visualization  
+- **Scikit-learn** – Preprocessing, modeling, evaluation  
+- **LightGBM** – Gradient boosting regression model  
+- **SciPy** – Statistical analysis  
+
+---
+
+## 🔍 Exploratory Data Analysis (EDA)
+EDA is performed to understand the structure and quality of the data:
+
+- Viewing dataset shape and sample records
+- Checking missing values
+- Identifying unique values in categorical columns
+- Understanding feature distributions
+- Detecting skewness and outliers in numerical features
+
+This step helps in making informed preprocessing and modeling decisions.
+
+---
+
+## 🧹 Data Preprocessing
+The following preprocessing steps are applied:
+
+### 1. Handling Missing Values
+- Numerical missing values are filled using appropriate statistical measures
+- Categorical missing values are handled using mode or removed if insignificant
+
+### 2. Feature Engineering
+- Conversion of `total_sqft` into numeric format
+- Extraction of numerical information from text-based columns
+- Removal of irrelevant or redundant columns
+
+### 3. Encoding Categorical Variables
+- Categorical features such as `area_type` and `location` are encoded using:
+  - Label Encoding
+  - One-Hot Encoding (where required)
+
+### 4. Feature Scaling
+- Numerical features are scaled using standardization to improve model performance
+
+---
+
+## 🤖 Machine Learning Models Used
+Multiple regression models are trained and evaluated to compare performance:
+
+- **Linear Regression**
+- **Ridge Regression**
+- **Lasso Regression**
+- **Decision Tree Regressor**
+- **Random Forest Regressor**
+- **LightGBM Regressor**
+
+Each model is trained on the processed training data and evaluated using validation metrics.
+
+---
+
+## 📏 Model Evaluation
+Model performance is measured using:
+
+- **Root Mean Squared Error (RMSE)**
+- **R² Score**
+
+A comparison of results across models is used to identify the most effective approach.
+
+---
+
+## 🔧 Hyperparameter Tuning
+For advanced models such as **Random Forest** and **LightGBM**, hyperparameter tuning is performed using:
+
+- **GridSearchCV**
+- Cross-validation
+
+This improves generalization performance and reduces overfitting.
+
+---
+
+## 🏆 Best Model Selection
+Based on validation performance, **LightGBM Regressor** is selected as the final model due to its superior accuracy and efficiency.
+
+---
+
+## 📤 Kaggle Submission
+Final predictions are generated on the test dataset and saved in the required Kaggle submission format:
+
+```csv
+Id,price
+1,XXXXX
+2,XXXXX
+
+Results & Performance
+
+Accuracy Score Achieved: 70%
+
+Highest Score on Leaderboard: 80%
+
+Leaderboard Ranking: 181
+
+Total Participants: 1000+
